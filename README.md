@@ -1,5 +1,7 @@
 <div align='center' ><font size='70'>说明文档</font></div>
 
+# git
+
 ## 第一次将文件上传到GitHub
 
 - 进入管理的文件夹
@@ -71,9 +73,119 @@ git add .
 git commit -m "描述信息"
 # 完成任务后，将代码推送到远端
 # 注意只需要推送dev分支，看清楚自己是在哪个分支
-git push origin dev
+git push origin dev  # 协同合作后才可以上传到别人的GitHub
 # 推送完成后就可以了，剩下我来合并。
 ```
+
+
+
+# 预测用户流失设计
+
+## 应用场景
+
+```python
+"""
+应用场景： 业务部门希望数据部门能对流失用户做数据分析
+例如： 到底流失客户的哪些特征最显著，当用户在哪些特征的什么条件下比较容易发生流失行为，并且交给业务部门
+针对这些用户进行业务优化及其挽回动作。
+基于上述要求：数据分析工作特点：
+这是一个特征提取的分析工作，目标交付物是特征的重要性和特征规则
+可通过决策树分类算法，决策树是最好的解释规则的算法
+业务部门需要了解规则的关系，提供规则图
+数据大概率会出现样布不均衡，原因是流失的用户一定是少量的
+"""
+
+"""
+Pandas                python      做数据读取和基本处理
+sklearn的trian_test_split        实现切分数据集为训练集和测试集
+XGBoost                          分类算法用于模型训练和规则处理
+sklearn.metrics中            多个评估指标苹果XGBoost模型的效果
+imblearn.over_sampling              中的SMOTE库做样本均衡处理
+matplotlib                          图形的输出，配合使用
+prettytable                         表格格式化输出展示
+GraphViz                            矢量图输出的第三方程序，为python提供接口，需要下载并且配置环境变量
+pydot                               XGBoost展示树图形时会用到
+"""
+```
+
+## 安装必要的库
+
+### xgboost
+
+- [xgboost安装包网址链接](https://www.lfd.uci.edu/~gohlke/pythonlibs/#xgboost)
+
+```python
+# 到网址里下载对应的python版本的安装包（我的是3.7版本，安装包已经放入文件夹中）
+# 将下载好的安装包放入对应python解释器Scripts中，比如：G:\python_learn\venv\Scripts
+# cmd 进入Scripts中： pip install xgboost-1.2.1-cp37-cp37m-win_amd64.whl（安装包名）
+# 安装成功
+```
+
+### GraphViz
+
+- [GraphViz下载网址](http://www.graphviz.org/download/)
+- 安装包已经放入文件案件
+- 需要配置环境变量才可以使用
+- 用户环境变量如下
+- ![1](C:\Users\wesley\Desktop\svm\1.PNG)
+
+- 系统环境变量如下
+- ![2](C:\Users\wesley\Desktop\svm\2.PNG)
+
+- 系统环境变量中的path下添加Graphviz的bin目录
+- ![3](C:\Users\wesley\Desktop\svm\3.PNG)
+
+### prettytable
+
+```python
+pip install prettytable
+```
+
+### pydot
+
+```python
+pip install pydot
+```
+
+### pyecharts
+
+```python
+pip install 库名
+```
+
+## 注意的问题
+
+### 预处理
+
+- xgboost算法具有容忍性，不处理空值，也会有效的应对
+- xgboost本身就能有效的选择特征并处理，我们无须降维
+- 虽然说xgboost可以不处理空值，但是我们研究的是用户流失，流失客户一定是少量的，会出现数据不均匀的情况，所以我们需要对数据进行均衡处理。均衡处理强制要求不可以有空值，所以我们需要对空值进行处理
+- 均值处理后返回的是一个numpy矩阵，已经丢失特征，我们需要重新为数据填上标签
+- random_state这个参数很重要，对于随机森林这个模型，它本质上是随机的，设置不同的随机状态（或者不设置random_state参数）可以彻底改变构建的模型
+- 混淆矩阵输出是一个矩阵，没有任何标签。我们需要对它进行表格格式化输出展示
+- xgboost训练出来的模型，自带了一些可视化方法。xgb.plot_importance输出了特征的重要性，xgb.to_graphviz输出了一个树形规则图，这两个方法直接通过给训练出来的模型和一些参数就可以直接绘图，都没有给分析出来的数据。
+- pyechart绘图需要数据，通过观察源码，xgboost模型可以通过以下方法获取分析后得到得数据
+
+```python
+# importance_type = weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
+importance =model_xgb.get_booster().get_score(
+    importance_type='weight', fmap='')
+```
+
+- 得到分析后数据之后，将数据处理成某种格式，就可以绘制pyecharts图
+- 分析树形规则图可以了解到：我们会发现从上层到下层，随着条件的增加，流失用户的概率就越大（精准确定用户），规则越多，覆盖得总样本量和流失的用户数量就越少
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
