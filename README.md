@@ -128,14 +128,15 @@ pydot                               XGBoost展示树图形时会用到
 - 需要配置环境变量才可以使用
 - 用户环境变量如下
 
-![用户环境变量](https://github.com/wesley-1221/-/blob/dev/group/test.PNG)
+![用户环境变量](https://github.com/wesley-1221/-/blob/dev/iamges/GraphViz/用户环境变量.PNG)
 
 - 系统环境变量如下
 
-![系统环境变量](https://github.com/wesley-1221/-/raw/dev/group/test.PNG)
+![系统环境变量](https://github.com/wesley-1221/-/blob/dev/iamges/GraphViz/系统环境变量.PNG)
 
 - 系统环境变量中的path下添加Graphviz的bin目录
-- ![3](C:\Users\wesley\Desktop\svm\3.PNG)
+
+![path](https://github.com/wesley-1221/-/blob/dev/iamges/GraphViz/path.PNG)
 
 ### prettytable
 
