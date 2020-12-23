@@ -132,11 +132,11 @@ pydot                               XGBoost展示树图形时会用到
 
 - 系统环境变量如下
 
-![系统环境变量](https://github.com/wesley-1221/-/blob/dev/iamges/GraphViz/system.PNG)
+![系统环境变量](https://github.com/wesley-1221/-/blob/dev/images/GraphViz/system.PNG)
 
 - 系统环境变量中的path下添加Graphviz的bin目录
 
-![path](https://github.com/wesley-1221/-/blob/dev/iamges/GraphViz/path.PNG)
+![path](https://github.com/wesley-1221/-/blob/dev/images/GraphViz/path.PNG)
 
 ### prettytable
 
