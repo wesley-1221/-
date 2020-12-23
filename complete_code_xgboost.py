@@ -51,20 +51,21 @@ def trainingModel(X_train, y_train, X_test):
 # 混淆矩阵
 def confusionMatrix(y_test, pre_y):
     # 混淆矩阵表格形式输出
-    tp, fn, fp, tn = confusion_matrix(y_test, pre_y).ravel()                                   # 获得混淆矩阵
-    confusion_matrix_table = prettytable.PrettyTable(['', 'prediction-1', 'prediction-0'])  # 创建表格实例（好看一些）
-    confusion_matrix_table.add_row(['actual-1', tp, fn])  # 增加第一行数据
-    confusion_matrix_table.add_row(['actual-0', fp, tn])  # 增加第二行数据
+    tp, fp, fn, tn = confusion_matrix(y_test, pre_y).ravel()                                   # 获得混淆矩阵
+    print(tp, fp, fn, tn)
+    confusion_matrix_table = prettytable.PrettyTable(['', 'actual-1', 'actual-0'])  # 创建表格实例（好看一些）
+    confusion_matrix_table.add_row(['prediction-1', tp, fp])  # 增加第一行数据
+    confusion_matrix_table.add_row(['prediction-0', fn, tn])  # 增加第二行数据
     print('confusion matrix \n', confusion_matrix_table)
 
     # 混淆矩阵图形输出
-    classes = list(set(pre_y))
+    classes = list(set(y_test))
     # 排序，准确对上分类结果
     classes.sort()
     # 对比，得到混淆矩阵
     confusion = confusion_matrix(y_test, pre_y)
     # 热度图，后面是指定的颜色块，gray也可以，gray_x反色也可以
-    plt.imshow(confusion, cmap=plt.cm.Blues)
+    plt.imshow(confusion, cmap=plt.cm.Reds)
     # 这个东西就要注意了
     # ticks 这个是坐标轴上的坐标点
     # label 这个是坐标轴的注释说明
@@ -73,6 +74,7 @@ def confusionMatrix(y_test, pre_y):
     # 第一个是迭代对象，表示坐标的顺序
     # 第二个是坐标显示的数值的数组，第一个表示的其实就是坐标显示数字数组的index，但是记住必须是迭代对象
     plt.xticks(indices, classes)
+    print(confusion)
     plt.yticks(indices, classes)
     plt.colorbar()
     # 就是坐标轴含义说明了
@@ -81,8 +83,7 @@ def confusionMatrix(y_test, pre_y):
     # 显示数据，直观些
     for first_index in range(len(confusion)):
         for second_index in range(len(confusion[first_index])):
-            plt.text(first_index, second_index, confusion[second_index][first_index])
-
+            plt.text(first_index, second_index, confusion[first_index][second_index])
     # 显示
     plt.show()
 # 评价模型指标
@@ -102,7 +103,7 @@ def evaluationModel(model_xgb, X_test, y_test, pre_y):
 def visualizationPart(model_xgb):
     # 输出特征重要性
     # 树模型对象，条形图高度，显示排序后的最大特征数量，X轴文字，grid不显示网格
-    # importance_type=  weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
+    # importance_type = weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
     xgb.plot_importance(model_xgb, height=0.5, importance_type='gain', max_num_features=10, xlabel='Gain Split', grid=False)
     plt.show()
 
@@ -115,11 +116,15 @@ def visualizationPart(model_xgb):
     tuples = [(k, importance[k]) for k in importance]
     tuples = sorted(tuples, key=lambda x: x[1], reverse=True)
     labels, values = zip(*tuples)
+    print(importance)
+    print(tuples)
+    print(labels)
+    print(values)
 
     # 词云
     mywordcloud = WordCloud()
     # 词云图的轮廓也可以选择，有 'circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon'，默认的词云轮廓为circle
-    mywordcloud.add('', tuples, shape='cardioid')
+    mywordcloud.add('', tuples, shape='pentagon')
     # 渲染图片
     # 指定渲染图片存放的路径
     mywordcloud.render('词云.html')
