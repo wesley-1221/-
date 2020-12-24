@@ -5,14 +5,12 @@
 ## 第一次将文件上传到GitHub
 
 - 进入管理的文件夹
-
 - 打开git bash
-
 - 初始化命令
 
-  ```python
-  git init
-  ```
+```python
+git init
+```
 
 - 查看目录下文件状态
 
@@ -112,6 +110,17 @@ pydot                               XGBoost展示树图形时会用到
 
 ### xgboost
 
+```python
+'''
+集成学习算法
+	bagging(随机森林)
+    boosting（gbdt(xgboost)）
+    	gbdt梯度提升算法，xgboost属于gdbt算法
+
+xgboost:加法模型和向前优化算法，（是一个回归树，分类树集成学习算法）  	（多个弱学习器集成在一起）
+'''
+```
+
 - [xgboost安装包网址链接](https://www.lfd.uci.edu/~gohlke/pythonlibs/#xgboost)
 
 ```python
@@ -128,15 +137,15 @@ pydot                               XGBoost展示树图形时会用到
 - 需要配置环境变量才可以使用
 - 用户环境变量如下
 
-![用户环境变量](https://github.com/wesley-1221/-/blob/dev/images/GraphViz/user.PNG)
+![用户环境变量](https://github.com/wesley-1221/-/raw/dev/images/GraphViz/user.PNG)
 
 - 系统环境变量如下
 
-![系统环境变量](https://github.com/wesley-1221/-/blob/dev/images/GraphViz/system.PNG)
+![系统环境变量](https://github.com/wesley-1221/-/raw/dev/images/GraphViz/system.PNG)
 
 - 系统环境变量中的path下添加Graphviz的bin目录
 
-![path](https://github.com/wesley-1221/-/blob/dev/images/GraphViz/path.PNG)
+![path](https://github.com/wesley-1221/-/raw/dev/images/GraphViz/path.PNG)
 
 ### prettytable
 
@@ -180,7 +189,7 @@ pip install 库名
 - pyechart绘图需要数据，通过观察源码，xgboost模型可以通过以下方法获取分析后得到得数据
 
 ```python
-# importance_type = weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
+# importance_type = weight是特征在树中出现的次数（分裂的次数），gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
 importance =model_xgb.get_booster().get_score(
     importance_type='weight', fmap='')
 ```
@@ -190,6 +199,48 @@ importance =model_xgb.get_booster().get_score(
 ### 对树形规则图解释
 
 - 分析树形规则图可以了解到：我们会发现从上层到下层，随着条件的增加，流失用户的概率就越大（精准确定用户），规则越多，覆盖得总样本量和流失的用户数量就越少
+- leaf(类似与一个弱分类器，或者说就是一个预测值，通过leaf进行转化可以得到一个预测值)
+
+# github显示图片问题
+
+## github文件夹中显示图片
+
+- 打开文件hosts：（C:\Windows\System32\drivers\etc）下的hosts
+- 用记事本编辑，加入以下代码
+
+```python
+# GitHub Start 
+#192.30.253.112    github.com 
+#192.30.253.119    gist.github.com
+151.101.184.133    assets-cdn.github.com
+151.101.184.133    raw.githubusercontent.com
+151.101.184.133    gist.githubusercontent.com
+151.101.184.133    cloud.githubusercontent.com
+151.101.184.133    camo.githubusercontent.com
+151.101.184.133    avatars0.githubusercontent.com
+151.101.184.133    avatars1.githubusercontent.com
+151.101.184.133    avatars2.githubusercontent.com
+151.101.184.133    avatars3.githubusercontent.com
+151.101.184.133    avatars4.githubusercontent.com
+151.101.184.133    avatars5.githubusercontent.com
+151.101.184.133    avatars6.githubusercontent.com
+151.101.184.133    avatars7.githubusercontent.com
+151.101.184.133    avatars8.githubusercontent.com
+ 
+ # GitHub End
+```
+
+- 刷新github即可
+
+## github readme文件中显示图片（markdown编写）
+
+- 要在项目文件夹中建立一个专门存储图片的文件夹。
+- 在GitHub中打开图片，复制网址
+- 在markdown中编写插入图片的时候用这个网址。GitHub readme文件就可以显示图片
+- 但是本地的readme文件就显示不了图片，因为找不到路径
+- 需要将网址中的blob改成raw即可，两者都可以显示图片了
+
+
 
 
 

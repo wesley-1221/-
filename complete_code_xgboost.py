@@ -47,6 +47,8 @@ def trainingModel(X_train, y_train, X_test):
     model_xgb = xgb.XGBClassifier(**param_dist)
     model_xgb.fit(X_train, y_train)
     pre_y = model_xgb.predict(X_test)
+    model_xgb.save_model("analysis_user_feature.model")
+    # model_xgb.load_model()
     return model_xgb, pre_y
 # 混淆矩阵
 def confusionMatrix(y_test, pre_y):
@@ -60,12 +62,9 @@ def confusionMatrix(y_test, pre_y):
 
     # 混淆矩阵图形输出
     classes = list(set(y_test))
-    # 排序，准确对上分类结果
-    classes.sort()
-    # 对比，得到混淆矩阵
-    confusion = confusion_matrix(y_test, pre_y)
-    # 热度图，后面是指定的颜色块，gray也可以，gray_x反色也可以
-    plt.imshow(confusion, cmap=plt.cm.Reds)
+    classes.sort()                                              # 排序，准确对上分类结果
+    confusion = confusion_matrix(y_test, pre_y)                 # 对比，得到混淆矩阵
+    plt.imshow(confusion, cmap=plt.cm.Reds)                     # 热度图，后面是指定的颜色块，gray也可以，gray_x反色也可以
     # 这个东西就要注意了
     # ticks 这个是坐标轴上的坐标点
     # label 这个是坐标轴的注释说明
@@ -77,14 +76,12 @@ def confusionMatrix(y_test, pre_y):
     print(confusion)
     plt.yticks(indices, classes)
     plt.colorbar()
-    # 就是坐标轴含义说明了
     plt.xlabel('guess')
     plt.ylabel('fact')
-    # 显示数据，直观些
+    # 加入数据
     for first_index in range(len(confusion)):
         for second_index in range(len(confusion[first_index])):
             plt.text(first_index, second_index, confusion[first_index][second_index])
-    # 显示
     plt.show()
 # 评价模型指标
 def evaluationModel(model_xgb, X_test, y_test, pre_y):
