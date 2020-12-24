@@ -1,389 +1,341 @@
 digraph {
     graph [ rankdir=TB ]
 
-    0 [ label="longten<491.950012" ]
+    0 [ label="retention_days<47.5" ]
     0 -> 1 [label="yes, missing" color="#638e5e"]
     0 -> 2 [label="no" color="#a40000"]
 
-    1 [ label="equipmon<2.49389935" ]
+    1 [ label="equipmon<2.83061695" ]
     1 -> 3 [label="yes, missing" color="#638e5e"]
     1 -> 4 [label="no" color="#a40000"]
 
-    3 [ label="total_orders<8.5" ]
+    3 [ label="retention_days<12.5" ]
     3 -> 7 [label="yes, missing" color="#638e5e"]
     3 -> 8 [label="no" color="#a40000"]
 
-    7 [ label="reg_source<0.5" ]
+    7 [ label="confer<0.5" ]
     7 -> 15 [label="yes, missing" color="#638e5e"]
     7 -> 16 [label="no" color="#a40000"]
 
-    15 [ label="level<2.5" ]
+    15 [ label="level<1.5" ]
     15 -> 31 [label="yes, missing" color="#638e5e"]
     15 -> 32 [label="no" color="#a40000"]
 
-    31 [ label="income<17.0641899" ]
-    31 -> 55 [label="yes, missing" color="#638e5e"]
-    31 -> 56 [label="no" color="#a40000"]
+    31 [ label="leaf=-0.0317739286" ]
 
-    55 [ label="leaf=-0.158259898" ]
+    32 [ label="cardmon<17.3557339" ]
+    32 -> 51 [label="yes, missing" color="#638e5e"]
+    32 -> 52 [label="no" color="#a40000"]
 
-    56 [ label="lninc<3.93168688" ]
-    56 -> 77 [label="yes, missing" color="#638e5e"]
-    56 -> 78 [label="no" color="#a40000"]
+    51 [ label="leaf=0.410931319" ]
 
-    77 [ label="ebill<0.5" ]
-    77 -> 103 [label="yes, missing" color="#638e5e"]
-    77 -> 104 [label="no" color="#a40000"]
+    52 [ label="leaf=0.040178854" ]
 
-    103 [ label="logwire<3.30249023" ]
-    103 -> 117 [label="yes, missing" color="#638e5e"]
-    103 -> 118 [label="no" color="#a40000"]
-
-    117 [ label="leaf=0.0535652004" ]
-
-    118 [ label="address<0.5" ]
-    118 -> 123 [label="yes, missing" color="#638e5e"]
-    118 -> 124 [label="no" color="#a40000"]
-
-    123 [ label="leaf=0.047804419" ]
-
-    124 [ label="leaf=0.441368312" ]
-
-    104 [ label="confer<0.5" ]
-    104 -> 119 [label="yes, missing" color="#638e5e"]
-    104 -> 120 [label="no" color="#a40000"]
-
-    119 [ label="leaf=0.244186491" ]
-
-    120 [ label="leaf=-0.192706123" ]
-
-    78 [ label="leaf=-0.0684146956" ]
-
-    32 [ label="retention_days<10.5" ]
-    32 -> 57 [label="yes, missing" color="#638e5e"]
-    32 -> 58 [label="no" color="#a40000"]
-
-    57 [ label="callwait<0.5" ]
-    57 -> 79 [label="yes, missing" color="#638e5e"]
-    57 -> 80 [label="no" color="#a40000"]
-
-    79 [ label="leaf=0.350966752" ]
-
-    80 [ label="leaf=0.0603566281" ]
-
-    58 [ label="address<3.5" ]
-    58 -> 81 [label="yes, missing" color="#638e5e"]
-    58 -> 82 [label="no" color="#a40000"]
-
-    81 [ label="income<25.5382442" ]
-    81 -> 105 [label="yes, missing" color="#638e5e"]
-    81 -> 106 [label="no" color="#a40000"]
-
-    105 [ label="leaf=-0.150000006" ]
-
-    106 [ label="leaf=0.0787270516" ]
-
-    82 [ label="leaf=-0.339561224" ]
-
-    16 [ label="cardten<227.5" ]
+    16 [ label="tollmon<14.308054" ]
     16 -> 33 [label="yes, missing" color="#638e5e"]
     16 -> 34 [label="no" color="#a40000"]
 
-    33 [ label="retention_days<11.5" ]
-    33 -> 59 [label="yes, missing" color="#638e5e"]
-    33 -> 60 [label="no" color="#a40000"]
+    33 [ label="leaf=-0.337609619" ]
 
-    59 [ label="longten<26.1302299" ]
-    59 -> 83 [label="yes, missing" color="#638e5e"]
-    59 -> 84 [label="no" color="#a40000"]
+    34 [ label="age<25" ]
+    34 -> 53 [label="yes, missing" color="#638e5e"]
+    34 -> 54 [label="no" color="#a40000"]
 
-    83 [ label="leaf=-0.172664404" ]
+    53 [ label="leaf=-0.169601858" ]
 
-    84 [ label="leaf=0.171709523" ]
+    54 [ label="address<9" ]
+    54 -> 71 [label="yes, missing" color="#638e5e"]
+    54 -> 72 [label="no" color="#a40000"]
 
-    60 [ label="retention_days<27.5" ]
-    60 -> 85 [label="yes, missing" color="#638e5e"]
-    60 -> 86 [label="no" color="#a40000"]
+    71 [ label="leaf=0.370144933" ]
 
-    85 [ label="leaf=-0.421901226" ]
+    72 [ label="leaf=-0.0915381908" ]
 
-    86 [ label="leaf=0.0350881964" ]
-
-    34 [ label="longmon<7.90977001" ]
-    34 -> 61 [label="yes, missing" color="#638e5e"]
-    34 -> 62 [label="no" color="#a40000"]
-
-    61 [ label="total_orders<2.5" ]
-    61 -> 87 [label="yes, missing" color="#638e5e"]
-    61 -> 88 [label="no" color="#a40000"]
-
-    87 [ label="leaf=0.0879064426" ]
-
-    88 [ label="leaf=-0.34276098" ]
-
-    62 [ label="longten<281.209137" ]
-    62 -> 89 [label="yes, missing" color="#638e5e"]
-    62 -> 90 [label="no" color="#a40000"]
-
-    89 [ label="leaf=0.38427031" ]
-
-    90 [ label="longten<391.174988" ]
-    90 -> 107 [label="yes, missing" color="#638e5e"]
-    90 -> 108 [label="no" color="#a40000"]
-
-    107 [ label="leaf=-0.17187573" ]
-
-    108 [ label="leaf=0.216239259" ]
-
-    8 [ label="retention_days<22.5" ]
+    8 [ label="total_orders<19.5" ]
     8 -> 17 [label="yes, missing" color="#638e5e"]
     8 -> 18 [label="no" color="#a40000"]
 
-    17 [ label="logtoll<2.96950006" ]
+    17 [ label="longmon<5.17500019" ]
     17 -> 35 [label="yes, missing" color="#638e5e"]
     17 -> 36 [label="no" color="#a40000"]
 
-    35 [ label="leaf=-0.362072349" ]
+    35 [ label="reside<1.5" ]
+    35 -> 55 [label="yes, missing" color="#638e5e"]
+    35 -> 56 [label="no" color="#a40000"]
 
-    36 [ label="age<48.5" ]
-    36 -> 63 [label="yes, missing" color="#638e5e"]
-    36 -> 64 [label="no" color="#a40000"]
+    55 [ label="leaf=-0.029204838" ]
 
-    63 [ label="logcard<2.92811966" ]
-    63 -> 91 [label="yes, missing" color="#638e5e"]
-    63 -> 92 [label="no" color="#a40000"]
+    56 [ label="leaf=-0.385908693" ]
 
-    91 [ label="longten<145.575012" ]
-    91 -> 109 [label="yes, missing" color="#638e5e"]
-    91 -> 110 [label="no" color="#a40000"]
+    36 [ label="level<2.5" ]
+    36 -> 57 [label="yes, missing" color="#638e5e"]
+    36 -> 58 [label="no" color="#a40000"]
 
-    109 [ label="leaf=0.388663143" ]
+    57 [ label="income<25.2290344" ]
+    57 -> 73 [label="yes, missing" color="#638e5e"]
+    57 -> 74 [label="no" color="#a40000"]
 
-    110 [ label="leaf=0.0667914078" ]
+    73 [ label="tollfree<0.5" ]
+    73 -> 81 [label="yes, missing" color="#638e5e"]
+    73 -> 82 [label="no" color="#a40000"]
 
-    92 [ label="leaf=-0.074119024" ]
+    81 [ label="retention_days<28.5" ]
+    81 -> 93 [label="yes, missing" color="#638e5e"]
+    81 -> 94 [label="no" color="#a40000"]
 
-    64 [ label="leaf=-0.112152845" ]
+    93 [ label="leaf=-0.394147336" ]
 
-    18 [ label="longmon<10.2000008" ]
-    18 -> 37 [label="yes, missing" color="#638e5e"]
-    18 -> 38 [label="no" color="#a40000"]
+    94 [ label="leaf=-0.0393374898" ]
 
-    37 [ label="leaf=-0.427498132" ]
+    82 [ label="leaf=-0.0248750821" ]
 
-    38 [ label="leaf=-0.0742684677" ]
+    74 [ label="total_orders<9.5" ]
+    74 -> 83 [label="yes, missing" color="#638e5e"]
+    74 -> 84 [label="no" color="#a40000"]
 
-    4 [ label="cardten<749.092041" ]
+    83 [ label="loglong<2.46191025" ]
+    83 -> 95 [label="yes, missing" color="#638e5e"]
+    83 -> 96 [label="no" color="#a40000"]
+
+    95 [ label="address<5.5" ]
+    95 -> 107 [label="yes, missing" color="#638e5e"]
+    95 -> 108 [label="no" color="#a40000"]
+
+    107 [ label="leaf=0.117180891" ]
+
+    108 [ label="leaf=0.424367607" ]
+
+    96 [ label="leaf=-0.111560144" ]
+
+    84 [ label="logcard<2.54408646" ]
+    84 -> 97 [label="yes, missing" color="#638e5e"]
+    84 -> 98 [label="no" color="#a40000"]
+
+    97 [ label="leaf=-0.356356591" ]
+
+    98 [ label="income<67.5" ]
+    98 -> 109 [label="yes, missing" color="#638e5e"]
+    98 -> 110 [label="no" color="#a40000"]
+
+    109 [ label="leaf=-0.149757072" ]
+
+    110 [ label="leaf=0.312003493" ]
+
+    58 [ label="cardmon<17.5" ]
+    58 -> 75 [label="yes, missing" color="#638e5e"]
+    58 -> 76 [label="no" color="#a40000"]
+
+    75 [ label="retention_days<38.5" ]
+    75 -> 85 [label="yes, missing" color="#638e5e"]
+    75 -> 86 [label="no" color="#a40000"]
+
+    85 [ label="income<58.1777077" ]
+    85 -> 99 [label="yes, missing" color="#638e5e"]
+    85 -> 100 [label="no" color="#a40000"]
+
+    99 [ label="leaf=-0.439127475" ]
+
+    100 [ label="leaf=-0.0566302277" ]
+
+    86 [ label="leaf=0.0681522787" ]
+
+    76 [ label="retention_days<29.5" ]
+    76 -> 87 [label="yes, missing" color="#638e5e"]
+    76 -> 88 [label="no" color="#a40000"]
+
+    87 [ label="leaf=0.236266688" ]
+
+    88 [ label="leaf=-0.0761142075" ]
+
+    18 [ label="leaf=-0.408052474" ]
+
+    4 [ label="cardten<821.888916" ]
     4 -> 9 [label="yes, missing" color="#638e5e"]
     4 -> 10 [label="no" color="#a40000"]
 
-    9 [ label="level<2.5" ]
+    9 [ label="logcard<2.46861649" ]
     9 -> 19 [label="yes, missing" color="#638e5e"]
     9 -> 20 [label="no" color="#a40000"]
 
-    19 [ label="equipten<1474.04272" ]
-    19 -> 39 [label="yes, missing" color="#638e5e"]
-    19 -> 40 [label="no" color="#a40000"]
+    19 [ label="tollten<203.625" ]
+    19 -> 37 [label="yes, missing" color="#638e5e"]
+    19 -> 38 [label="no" color="#a40000"]
 
-    39 [ label="logcard<2.44199991" ]
-    39 -> 65 [label="yes, missing" color="#638e5e"]
-    39 -> 66 [label="no" color="#a40000"]
+    37 [ label="address<7.5" ]
+    37 -> 59 [label="yes, missing" color="#638e5e"]
+    37 -> 60 [label="no" color="#a40000"]
 
-    65 [ label="tollmon<20.25" ]
-    65 -> 93 [label="yes, missing" color="#638e5e"]
-    65 -> 94 [label="no" color="#a40000"]
+    59 [ label="age<32.5" ]
+    59 -> 77 [label="yes, missing" color="#638e5e"]
+    59 -> 78 [label="no" color="#a40000"]
 
-    93 [ label="ebill<0.5" ]
-    93 -> 111 [label="yes, missing" color="#638e5e"]
-    93 -> 112 [label="no" color="#a40000"]
+    77 [ label="leaf=0.399631649" ]
 
-    111 [ label="leaf=-0.0419516712" ]
+    78 [ label="leaf=0.152006865" ]
 
-    112 [ label="leaf=0.420833528" ]
+    60 [ label="leaf=-0.124691322" ]
 
-    94 [ label="leaf=-0.351558864" ]
+    38 [ label="equipmon<42.1117516" ]
+    38 -> 61 [label="yes, missing" color="#638e5e"]
+    38 -> 62 [label="no" color="#a40000"]
 
-    66 [ label="age<20.5" ]
-    66 -> 95 [label="yes, missing" color="#638e5e"]
-    66 -> 96 [label="no" color="#a40000"]
+    61 [ label="leaf=-0.398276865" ]
 
-    95 [ label="leaf=0.0404849388" ]
+    62 [ label="leaf=0.0427888073" ]
 
-    96 [ label="logtoll<2.67751002" ]
-    96 -> 113 [label="yes, missing" color="#638e5e"]
-    96 -> 114 [label="no" color="#a40000"]
+    20 [ label="logtoll<2.65894842" ]
+    20 -> 39 [label="yes, missing" color="#638e5e"]
+    20 -> 40 [label="no" color="#a40000"]
 
-    113 [ label="leaf=0.0401367471" ]
+    39 [ label="longmon<4.2249999" ]
+    39 -> 63 [label="yes, missing" color="#638e5e"]
+    39 -> 64 [label="no" color="#a40000"]
 
-    114 [ label="education<4.5" ]
-    114 -> 121 [label="yes, missing" color="#638e5e"]
-    114 -> 122 [label="no" color="#a40000"]
+    63 [ label="leaf=-0.245078638" ]
 
-    121 [ label="cardten<467.5" ]
-    121 -> 125 [label="yes, missing" color="#638e5e"]
-    121 -> 126 [label="no" color="#a40000"]
+    64 [ label="leaf=0.144920811" ]
 
-    125 [ label="leaf=0.419098318" ]
+    40 [ label="longmon<13.6448507" ]
+    40 -> 65 [label="yes, missing" color="#638e5e"]
+    40 -> 66 [label="no" color="#a40000"]
 
-    126 [ label="leaf=0.127083898" ]
+    65 [ label="level<2.5" ]
+    65 -> 79 [label="yes, missing" color="#638e5e"]
+    65 -> 80 [label="no" color="#a40000"]
 
-    122 [ label="retention_days<14.5" ]
-    122 -> 127 [label="yes, missing" color="#638e5e"]
-    122 -> 128 [label="no" color="#a40000"]
+    79 [ label="age<21" ]
+    79 -> 89 [label="yes, missing" color="#638e5e"]
+    79 -> 90 [label="no" color="#a40000"]
 
-    127 [ label="leaf=-0.11916095" ]
+    89 [ label="leaf=-0.0198146515" ]
 
-    128 [ label="leaf=0.322571367" ]
+    90 [ label="retention_days<44.5" ]
+    90 -> 101 [label="yes, missing" color="#638e5e"]
+    90 -> 102 [label="no" color="#a40000"]
 
-    40 [ label="leaf=-0.1947947" ]
+    101 [ label="leaf=0.39411208" ]
 
-    20 [ label="equipmon<32" ]
-    20 -> 41 [label="yes, missing" color="#638e5e"]
-    20 -> 42 [label="no" color="#a40000"]
+    102 [ label="leaf=0.0666047931" ]
 
-    41 [ label="retention_days<6" ]
-    41 -> 67 [label="yes, missing" color="#638e5e"]
-    41 -> 68 [label="no" color="#a40000"]
+    80 [ label="sex<0.5" ]
+    80 -> 91 [label="yes, missing" color="#638e5e"]
+    80 -> 92 [label="no" color="#a40000"]
 
-    67 [ label="total_orders<2.5" ]
-    67 -> 97 [label="yes, missing" color="#638e5e"]
-    67 -> 98 [label="no" color="#a40000"]
+    91 [ label="address<9.5" ]
+    91 -> 103 [label="yes, missing" color="#638e5e"]
+    91 -> 104 [label="no" color="#a40000"]
 
-    97 [ label="leaf=0.30577004" ]
+    103 [ label="income<67" ]
+    103 -> 111 [label="yes, missing" color="#638e5e"]
+    103 -> 112 [label="no" color="#a40000"]
 
-    98 [ label="leaf=0.0409058407" ]
+    111 [ label="leaf=0.405709028" ]
 
-    68 [ label="total_orders<7.5" ]
-    68 -> 99 [label="yes, missing" color="#638e5e"]
-    68 -> 100 [label="no" color="#a40000"]
+    112 [ label="leaf=0.120543398" ]
 
-    99 [ label="longten<85.6750031" ]
-    99 -> 115 [label="yes, missing" color="#638e5e"]
-    99 -> 116 [label="no" color="#a40000"]
+    104 [ label="leaf=-0.016667841" ]
 
-    115 [ label="leaf=-0.0791854858" ]
+    92 [ label="longten<56.75" ]
+    92 -> 105 [label="yes, missing" color="#638e5e"]
+    92 -> 106 [label="no" color="#a40000"]
 
-    116 [ label="leaf=-0.373450309" ]
+    105 [ label="leaf=0.153060436" ]
 
-    100 [ label="leaf=-0.0132091437" ]
+    106 [ label="leaf=-0.287581265" ]
 
-    42 [ label="voice<0.5" ]
-    42 -> 69 [label="yes, missing" color="#638e5e"]
-    42 -> 70 [label="no" color="#a40000"]
+    66 [ label="leaf=-0.106118843" ]
 
-    69 [ label="income<44.5" ]
-    69 -> 101 [label="yes, missing" color="#638e5e"]
-    69 -> 102 [label="no" color="#a40000"]
-
-    101 [ label="leaf=0.17278643" ]
-
-    102 [ label="leaf=-0.198174998" ]
-
-    70 [ label="leaf=0.396587402" ]
-
-    10 [ label="voice<0.5" ]
+    10 [ label="ebill<0.5" ]
     10 -> 21 [label="yes, missing" color="#638e5e"]
     10 -> 22 [label="no" color="#a40000"]
 
-    21 [ label="leaf=0.198009267" ]
+    21 [ label="leaf=0.052323591" ]
 
-    22 [ label="cardmon<22.625" ]
-    22 -> 43 [label="yes, missing" color="#638e5e"]
-    22 -> 44 [label="no" color="#a40000"]
+    22 [ label="leaf=-0.388003767" ]
 
-    43 [ label="leaf=0.0454645604" ]
-
-    44 [ label="leaf=-0.403980941" ]
-
-    2 [ label="internet<0.5" ]
+    2 [ label="wiremon<47" ]
     2 -> 5 [label="yes, missing" color="#638e5e"]
     2 -> 6 [label="no" color="#a40000"]
 
-    5 [ label="age<35.5" ]
+    5 [ label="retention_days<52.5" ]
     5 -> 11 [label="yes, missing" color="#638e5e"]
     5 -> 12 [label="no" color="#a40000"]
 
-    11 [ label="income<61.5" ]
+    11 [ label="callwait<0.5" ]
     11 -> 23 [label="yes, missing" color="#638e5e"]
     11 -> 24 [label="no" color="#a40000"]
 
-    23 [ label="education<1.5" ]
-    23 -> 45 [label="yes, missing" color="#638e5e"]
-    23 -> 46 [label="no" color="#a40000"]
+    23 [ label="cardten<697.5" ]
+    23 -> 41 [label="yes, missing" color="#638e5e"]
+    23 -> 42 [label="no" color="#a40000"]
 
-    45 [ label="leaf=-0.0268037468" ]
+    41 [ label="age<42" ]
+    41 -> 67 [label="yes, missing" color="#638e5e"]
+    41 -> 68 [label="no" color="#a40000"]
 
-    46 [ label="leaf=-0.378637224" ]
+    67 [ label="leaf=0.059328232" ]
 
-    24 [ label="leaf=0.192986175" ]
+    68 [ label="leaf=0.332261086" ]
 
-    12 [ label="income<128" ]
+    42 [ label="total_orders<7" ]
+    42 -> 69 [label="yes, missing" color="#638e5e"]
+    42 -> 70 [label="no" color="#a40000"]
+
+    69 [ label="leaf=0.0529153869" ]
+
+    70 [ label="leaf=-0.267327815" ]
+
+    24 [ label="pager<0.5" ]
+    24 -> 43 [label="yes, missing" color="#638e5e"]
+    24 -> 44 [label="no" color="#a40000"]
+
+    43 [ label="leaf=-0.404329032" ]
+
+    44 [ label="leaf=-0.0548239313" ]
+
+    12 [ label="address<4.5" ]
     12 -> 25 [label="yes, missing" color="#638e5e"]
     12 -> 26 [label="no" color="#a40000"]
 
-    25 [ label="logcard<2.35099983" ]
-    25 -> 47 [label="yes, missing" color="#638e5e"]
-    25 -> 48 [label="no" color="#a40000"]
+    25 [ label="age<43.5" ]
+    25 -> 45 [label="yes, missing" color="#638e5e"]
+    25 -> 46 [label="no" color="#a40000"]
 
-    47 [ label="income<46.5" ]
-    47 -> 71 [label="yes, missing" color="#638e5e"]
-    47 -> 72 [label="no" color="#a40000"]
+    45 [ label="leaf=-0.234196126" ]
 
-    71 [ label="leaf=-0.0112971365" ]
+    46 [ label="leaf=0.0779267326" ]
 
-    72 [ label="leaf=-0.28804642" ]
+    26 [ label="logequi<3.41149998" ]
+    26 -> 47 [label="yes, missing" color="#638e5e"]
+    26 -> 48 [label="no" color="#a40000"]
 
-    48 [ label="wiremon<47.2754478" ]
-    48 -> 73 [label="yes, missing" color="#638e5e"]
-    48 -> 74 [label="no" color="#a40000"]
+    47 [ label="leaf=-0.128534481" ]
 
-    73 [ label="leaf=-0.452089101" ]
+    48 [ label="leaf=-0.442108899" ]
 
-    74 [ label="leaf=-0.138931185" ]
-
-    26 [ label="total_orders<24.5" ]
-    26 -> 49 [label="yes, missing" color="#638e5e"]
-    26 -> 50 [label="no" color="#a40000"]
-
-    49 [ label="leaf=0.0444175303" ]
-
-    50 [ label="leaf=-0.350178927" ]
-
-    6 [ label="cardmon<29.3647804" ]
+    6 [ label="logtoll<3.56068063" ]
     6 -> 13 [label="yes, missing" color="#638e5e"]
     6 -> 14 [label="no" color="#a40000"]
 
-    13 [ label="wiremon<39.5750008" ]
+    13 [ label="sex<0.5" ]
     13 -> 27 [label="yes, missing" color="#638e5e"]
     13 -> 28 [label="no" color="#a40000"]
 
-    27 [ label="age<36.5" ]
-    27 -> 51 [label="yes, missing" color="#638e5e"]
-    27 -> 52 [label="no" color="#a40000"]
+    27 [ label="leaf=-0.336472511" ]
 
-    51 [ label="leaf=0.00223717699" ]
+    28 [ label="leaf=-0.109734841" ]
 
-    52 [ label="leaf=-0.420802176" ]
-
-    28 [ label="equipten<2798.07495" ]
-    28 -> 53 [label="yes, missing" color="#638e5e"]
-    28 -> 54 [label="no" color="#a40000"]
-
-    53 [ label="leaf=0.37914601" ]
-
-    54 [ label="level<2.5" ]
-    54 -> 75 [label="yes, missing" color="#638e5e"]
-    54 -> 76 [label="no" color="#a40000"]
-
-    75 [ label="leaf=-0.0523618199" ]
-
-    76 [ label="leaf=-0.276652634" ]
-
-    14 [ label="total_orders<15" ]
+    14 [ label="ebill<0.5" ]
     14 -> 29 [label="yes, missing" color="#638e5e"]
     14 -> 30 [label="no" color="#a40000"]
 
-    29 [ label="leaf=0.386776894" ]
+    29 [ label="leaf=-0.259157538" ]
 
-    30 [ label="leaf=-0.164394677" ]
+    30 [ label="tollmon<53.9078331" ]
+    30 -> 49 [label="yes, missing" color="#638e5e"]
+    30 -> 50 [label="no" color="#a40000"]
+
+    49 [ label="leaf=0.444593102" ]
+
+    50 [ label="leaf=0.0526829138" ]
 }

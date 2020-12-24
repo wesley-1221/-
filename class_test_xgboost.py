@@ -18,6 +18,7 @@ from pyecharts.charts import WordCloud
 from pyecharts.charts import Pie
 from pyecharts import options as opts                                               # 配置项
 import os
+import pickle
 
 class XGBoostModel(object):
     def __init__(self, raw_data, using_model=True):
@@ -26,20 +27,14 @@ class XGBoostModel(object):
         self.X_train, self.X_test, self.y_train, self.y_test = self.splitDataset()
 
         if using_model:
-            if os.path.exists("./analysis_user_feature.model"):
-                self.xgb_model = xgb.XGBClassifier.load_model(fname="./analysis_user_feature.model")
+            if os.path.exists("./xgb_pickle.dat"):
+                self.xgb_model = pickle.load(open("xgb_pickle.dat", "rb"))
             else:
                 print("No model")
         else:
-            self.xgb_model = self.build_xgb_model()
-
-    def build_xgb_model(self):
-        # 树模型对象，条形图高度，显示排序后的最大特征数量，X轴文字，grid不显示网格
-        # importance_type=  weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
-        param_dist = {'objective': 'binary:logistic', 'n_estimators': 10,
-                      'subsample': 0.8, 'max_depth': 10, 'n_jobs': -1}
-        model_xgb = xgb.XGBClassifier(**param_dist)
-        return model_xgb
+            # self.X, self.y = self.dataPreprocessing()
+            # self.X_train, self.X_test, self.y_train, self.y_test = self.splitDataset()
+            self.xgb_model = self.buildXgbModel()
 
     def dataPreprocessing(self):
         X, y = self.raw_data.iloc[:, :-1], self.raw_data.iloc[:, -1]  # 分割X(除最后一列的全部数据),y(最后一列数据)
@@ -61,14 +56,24 @@ class XGBoostModel(object):
             self.X, self.y, test_size=.3, random_state=0)
         return X_train, X_test, y_train, y_test
 
-    def trainingModel(self):
+    def buildXgbModel(self):
+        # 树模型对象，条形图高度，显示排序后的最大特征数量，X轴文字，grid不显示网格
+        # importance_type=  weight是特征在树中出现的次数，gain是使用特征分裂的平均值增益，cover是作为分裂节点的覆盖的样本比例
+        param_dist = {'objective': 'binary:logistic', 'n_estimators': 10,
+                      'subsample': 0.8, 'max_depth': 10, 'n_jobs': -1}
+        model_xgb = xgb.XGBClassifier(**param_dist)
+        return model_xgb
+
+    def saveModel(self):
+        pickle.dump(self.xgb_model, open("xgb_pickle.dat", "wb"))
+
+    def trainPreModel(self):
         self.xgb_model.fit(self.X_train, self.y_train)
         pre_y = self.xgb_model.predict(self.X_test)
         return pre_y
 
     def confusionMatrix(self, pre_y):
         # 混淆矩阵表格形式输出
-
         tp, fp, fn, tn = confusion_matrix(self.y_test, pre_y).ravel()  # 获得混淆矩阵
         confusion_matrix_table = prettytable.PrettyTable(['', 'actual-1', 'actual-0'])  # 创建表格实例（好看一些）
         confusion_matrix_table.add_row(['prediction-1', tp, fp])  # 增加第一行数据
@@ -187,11 +192,17 @@ class XGBoostModel(object):
 
 if __name__ == '__main__':
     raw_data = pd.read_csv('classification.csv', delimiter=',')  # 读取数据文件(未加工数据)
-    xgboost = XGBoostModel(raw_data, using_model=False)
-    pre_y = xgboost.trainingModel()
+    input_command = input("请输入输入使用已有模型[True or False]：\n").strip()
+    input_command = eval(input_command)
+    xgboost = XGBoostModel(raw_data, using_model=input_command)
+    pre_y = xgboost.trainPreModel()
     xgboost.confusionMatrix(pre_y)
     y_score = xgboost.evaluationModel(pre_y)
     xgboost.visualizationPart()
     xgboost.explain_tree(y_score)
+    if input_command == False:
+        xgboost.saveModel()
+    else:
+        pass
 
 
