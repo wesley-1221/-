@@ -62,6 +62,8 @@ git init
 ```python
 # 克隆远程仓库代码
 git clone 远程仓库地址（这个时候不用进行初始化）
+# 使用镜像
+git clone https://github.com.cnpmjs.org/name/project.git
 # 在将自己完成的任务放到文件夹中
 # 完成任务后
 # 我的代码已经有了两个分支，克隆下来默认在主分支，我们需要切换分支，进入第二分支，我的第二分支是dev分支
