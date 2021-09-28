@@ -189,7 +189,6 @@ class XGBoostModel(object):
             print('没有流失客户: {} | 占比: {:.0%} '.format((total_samples - is_churn), (1 - churn_rate)))
             print('-' * 40)
 
-
 if __name__ == '__main__':
     raw_data = pd.read_csv('classification.csv', delimiter=',')  # 读取数据文件(未加工数据)
     input_command = input("请输入输入使用已有模型[True or False]：\n").strip()

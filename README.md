@@ -1,5 +1,11 @@
 <div align='center' ><font size='70'>说明文档</font></div>
 
+
+
+# 组长：杨祎杰 
+
+# 组员：毛大源   周阶龙  黄警  卢冬梅  梁婧            尹显群  苏珊     陈慧贤
+
 # git
 
 ## 第一次将文件上传到GitHub
@@ -49,6 +55,7 @@ git init
 - 连接GitHub
 
   ```python
+  # 现在需要token和ssh进行验证
   # 给远程仓库起别名
   git remote add origin 远程仓库地址
   # 向远程仓库推送代码（默认是main分支）
